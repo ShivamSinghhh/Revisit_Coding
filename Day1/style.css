@@ -50,24 +50,26 @@
     margin-left:8% ;
     width: 4%;    
 }
-.random{
+h1{
     color:#aed8e0;
-    text-align: center;
+    text-align: center; 
+    padding:20px; 
 }
-.index{
+#index{
     display: flex;
+    justify-content: center;
+    gap:10px;
 }
-.index>div{
+#index>div{
     background-color: url("https://i.imgur.com/nrFCOUB_d.jpg?maxwidth=800&shape=thumb&fidelity=high");
-    flex-grow: 1;
+    width:10%;
     border:1px solid red;
     height: 150px;
 }
 
-
 #container{
     padding:10%;
-    column-width: 6em;
+    column-width: 13em;
 }
 
 #divName {
@@ -81,21 +83,21 @@
   }
   
   #divName:nth-child(2n) {
-      height: 8em;
-  }
-  
-  #divName:nth-child(3n) {
-      height: 12em;
-  }
-  
-  #divName:nth-child(4n) {
       height: 15em;
   }
   
-  #divName:nth-child(5n) {
+  #divName:nth-child(3n) {
+      height: 13em;
+  }
+  
+  #divName:nth-child(4n) {
       height: 12em;
   }
   
+  #divName:nth-child(5n) {
+      height: 17em;
+  }
+  
   #divName:nth-child(6n) {
-      height: 8em;
+      height: 20em;
   }

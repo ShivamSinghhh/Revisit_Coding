@@ -50,20 +50,12 @@
 
     </div>
 
-    <div class="random"><h1>A best site to kill boredom.</h1</div>
-<!-- 
-        <div class="index">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div> -->
+    <h1>You deserve to smile today</h1>
+
+        <div id="index"></div>
 
         <div id="container"></div>
+        
        
     
 </body>
@@ -71,10 +63,21 @@
 
 <script>
     let container = document.getElementById("container");
+   
     for (let i = 0; i <= 100; i++) {
         const newDiv = document.createElement('div');
         newDiv.setAttribute("id", "divName")
         newDiv.style.backgroundImage = `url(https://picsum.photos/500/500?random=${i})`;
         container.appendChild(newDiv);
+    }
+
+    let index = document.getElementById("index");
+    for (let i = 0 ; i <8 ; i++){
+        let idiv = document.createElement("div");
+        let p = document.createElement("p") ;
+        p.innerText = "lorem impusm"
+        idiv.setAttribute("id","indexName");
+        idiv.style.backgroundImage = `url(https://picsum.photos/280/280?random=${i})`;
+        index.appendChild(idiv)
     }
 </script>
