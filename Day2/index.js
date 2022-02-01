@@ -1,20 +1,19 @@
 
 let count = 1 ;
 
-
 let div = document.getElementById("show");
 
-div.addEventListener("scroll",something)
+div.addEventListener("scroll",scrollDown)
 
-function something(){
+function scrollDown(){
     if (div.scrollTop+div.clientHeight >= div.scrollHeight)
     {
-       scrollList();
+       showList();
     }
 }
 
 
-function scrollList(){    
+function showList(){    
 
 for(let i = 0 ;  i<25; i++ ){
 let h3 = document.createElement("h3");
@@ -24,5 +23,5 @@ div.append(h3)
 
 }
 
-scrollList()
+showList()
 
