@@ -10,6 +10,7 @@ function scrollDown(){
     {
        showList();
     }
+    console.log(div.scrollTop,div.clientHeight,div.scrollHeight)
 }
 
 

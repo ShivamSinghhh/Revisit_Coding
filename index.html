@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            background-color: black;
+        }
+
+        @media (max-width:768px) {
+            .container {
+                width: 85%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* grid-template-rows: 100px 200px; */
+            }
+
+            .nav {
+                grid-template-columns: 1/1/2/3;
+                background-color: aqua;
+            }
+
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 100px 200px;
+            background-color: antiquewhite;
+            width: 85%;
+            border: 1px solid red;
+            margin: auto;
+            justify-content: center;
+
+        }
+
+        .container>div {
+            font-size: 30px;
+            border: 1px solid yellow;
+            margin: 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            padding: 10px;
+
+        }
+
+        .nav {
+            grid-area: 1/1/2/5;
+            background: #f7fa00;
+        }
+
+        #box1 {
+            background-color: #ff0100;
+        }
+
+        #box2 {
+            background-color: #00fb2a;
+        }
+
+        #box3 {
+            background-color: #5763ee;
+        }
+
+        #box4 {
+            background-color: #989898;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Learning Media Queries</h2>
+
+    <div class="container">
+        <div class="nav">Navigation</div>
+        <div id="box1">Box-1</div>
+        <div id="box2">Box-2</div>
+        <div id="box3">Box-3</div>
+        <div id="box4">Box-4</div>
+
+    </div>
+
+
+</body>
+
+</html>
