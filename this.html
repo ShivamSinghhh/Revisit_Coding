@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+<script>
+   
+ /*
+ "this" refers to the object that executing the current function.
+
+ executional context: 
+  1- inside browser : window
+  2- inside node Js : global 
+
+# if we write "this" alone, then "this" refers to the global object /window.
+
+# if "this" keyword is used inside a regular or arrow function , then again it will 
+  refer to the global / window.
+
+# if "this" is used inside a  method, then it refers to the parent object for regular function
+  and global object for arrow function.
+ 
+*method : if the function is the part of an object, we called it as method in an object.
+   
+ */
+
+ //------------------------this alone-------------//
+   
+     console.log(this) // it will refer to the global in node Js & window in browser
+
+//--------this with Regular function ------------//
+
+  // let name = "shivam";    // it doesn't declared in global scope , it is defined in script scope.
+  // const name = "shivam";  // variables with let & const get declared in script scope.
+   
+    var name = "shivam";     // it is declared in global scope.
+    function regular(){  
+       var name = "singh"  // local execution context or local functional scope.
+       console.log(this.name) // this will refer to the global/window  and output is (shivam)
+       console.log(this)   // this will again refer to the global/window object.
+    
+   }
+   regular();
+   
+
+   //-----------------this with arrow function---------------------//
+
+     var school = "masai";
+     let arrow = ()=>{
+         var school = "st.paul's";     // this behaves same as  regular function;
+         console.log(this.school)      //  this is referring to the global object // masai
+     }
+     arrow();     
+
+  // ---------------------this inside a method------------------------------------------//
+
+  let data = {
+      name : "katy",
+      school : "oxford",
+      getDetails: function(){
+          console.log(this)  // this will refer to the owner object/parent object.
+          console.log(this.name,this.school)
+          // name and school is already defined in global scope, still it will refer to the
+          // parent object only.  (katy oxford)
+      },
+     arrowDetails : ()=>{
+          console.log(this)  // this will refer to the window object
+          console.log(this.name,this.school)
+        }     
+  }
+   data.getDetails();
+   data.arrowDetails();
+
+ //----------------this inside  Constructor function -------------------------------//
+  
+ function Teachers (name, sub){
+    //  let obj = {};
+    //  obj.name = name;
+    //  obj.subject = sub;
+    //  return obj;
+
+     this.name = name;    // new word will creat an empty object and returned with some value.
+     this.subject = sub; // inside constructor function this refers to the owner object.
+   
+
+ }
+ let T1 = new Teachers("Nrupul","JS");
+ console.log(T1);
+ let T2 = new Teachers("Aman", "DSA");
+ console.log(T2);
+
+   
+ </script>
+
+</body>
+</html>
