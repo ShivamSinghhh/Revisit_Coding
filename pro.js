@@ -1,9 +1,9 @@
 /*
 father  = 85 marks;
 exam = next week;
-till next = pending
+till next = promise is in pending stage.
 >= 85 marks // succeded  // laptop
-< 85   //  do work hard  
+< 85   //  do work hard!  
 
 Promises = it is an object in JS representing eventual completion or 
 failure of an asynchronus function.
@@ -37,6 +37,14 @@ let pro = new Promise((res,rej)=>{
 
 console.log(pro)
 
+pro.then((res)=>{
+    console.log(res)
+}).catch((e)=>{
+    console.log(e)
+}).finally(()=>{
+    console.log("finally done!")
+})
+
 //async and await is syntactic sugar to write promises
 
 async function test(){
@@ -50,11 +58,7 @@ async function test(){
 
 test();
 
-// pro.then((res)=>{
-//     console.log(res)
-// }).catch((e)=>{
-//     console.log(e)
-// })
+
 
 
 

@@ -1,45 +1,49 @@
 /* 
-closure : closure is combination of functions bundled together(enclosed) 
-with refrence to its surrounding state i.e (lexical enviornment)
+ closure is the combination of functions bundled together (enclosed) with 
+ reference to its surrounding state . i.e (lexical enviornment).
 
-closure give access to outer function's scope from inside function.
+ In other words, closure gives access to the outer function from inside function.
+ It remembers its history.
 
-uses of clousure:
-1- memoize,
-2- maintain asynchronus behaviour
-3- iteration
-4- set timeout
+ Every closure have three scopes:
+ 1- local scope 
+ 2- outer functional scope
+ 3- global scope.
+
+ uses of closure :
+ memoize the variable
+ asynchronus behaviour
+ iteration
+ setTime out
+
+
 
 */
 
-function x(){
-    for(let i = 1 ;  i < 5; i++){
-        
-        setTimeout(()=>{
+ let a = 5;  // global scope
+ function sum(){  // outer function 
+     let b = 10;   // outer function scope
+     function total(){  // inner function
+         let c = 15;    // local scope
+         console.log(a+b+c)
+     }
+     
+     return total;
+ }
+ 
+ let ans = sum(); // sum function is invoked
+// console.log(ans())
+
+ function test (){
+
+    for (let i = 0 ; i< 5 ;i++){    // let is block scope
+        setTimeout(function(){      // var is global scope or functional scope.
             console.log(i)
-        },i*1000)
+        },i*1000)      
     }
-    console.log("hello world!")
-}
- // x();
-
-// var i // global scope
-// let i // local scope, 
-// it will create copy of i as many time as it is called with other i;
+    console.log("hello")
+ }
+ test()
 
 
-
-function y(){  // outer function
-    let a = 10 ;
-
-    function z(){  // inner function
-        var b = 5
-        let sum = a+b;
-        console.log(sum)
-    }
-  z()
-  
-
-}
-y()
 
