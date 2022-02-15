@@ -31,19 +31,19 @@
      return total;
  }
  
- let ans = sum(); // sum function is invoked
-// console.log(ans())
+//  let ans = sum(); // sum function is invoked
+// // console.log(ans())
 
- function test (){
+//  function test (){
 
-    for (let i = 0 ; i< 5 ;i++){    // let is block scope
-        setTimeout(function(){      // var is global scope or functional scope.
-            console.log(i)
-        },i*1000)      
-    }
-    console.log("hello")
- }
- test()
+//     for (let i = 0 ; i< 5 ;i++){    // let is block scope
+//         setTimeout(function(){      // var is global scope or functional scope.
+//             console.log(i)
+//         },i*1000)      
+//     }
+//     console.log("hello")
+//  }
+//  test()
 
 
 

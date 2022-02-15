@@ -22,16 +22,16 @@ callback function: callback is the function passed to another function
 
 // ----- call back function----
 
-// function sum(a,b,callback){
-//     total = a+b;
-//     callback(total)
-// }
+function sum(a, b, callback) {
+  total = a + b;
+  callback(total)
+}
 
-// function print(msg){
-//     console.log(msg)
-// }
+function print(msg) {
+  console.log(msg)
+}
 
- // sum(20,10,print)
+sum(20, 10, print)
 
  // let arr = [2,4,5,7,]
 
@@ -53,7 +53,7 @@ callback function: callback is the function passed to another function
 //   console.log(output);
 
 
-// array.reduce --- it will iterate through the entire array and gives 
+// array.reduce --- it will iterate through the entire array and gives
 // us a single output;
 // reduce function takes two parameter i,e accumulator and current value
 // accumulator bydefault take the first value of the array;
@@ -70,21 +70,22 @@ callback function: callback is the function passed to another function
 // array.filter -- this method filter the array according to the filter criteria
 // and return another array.
 
-let arr = [2,4,5,12,15] ;
-let even = arr.filter((a)=>{
-    if (a%2===0)
-   { return a;}
-})
-// console.log(even)
+// let arr = [2,4,5,12,15] ;
+// let even = arr.filter((a)=>{
+//     if (a%2===0)
+//    { return a;}
+// })
+// // console.log(even)
 
-function isOdd(x){
-    if (x%2 !== 0)
-    { return true}
-    else {return false}
-}
+// function isOdd(x){
+//     if (x%2 !== 0)
+//     { return true}
+//     else {return false}
+// }
 
-let odd = arr.filter(isOdd);
-console.log(odd)
+// let odd = arr.filter(isOdd);
+// console.log(odd)
+
 
 
 

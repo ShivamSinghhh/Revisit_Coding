@@ -31,21 +31,21 @@
 
  //------------------------this alone-------------//
    
-     console.log(this) // it will refer to the global in node Js & window in browser
+   //  console.log(this) // it will refer to the global in node Js & window in browser
 
 //--------this with Regular function ------------//
 
-  // let name = "shivam";    // it doesn't declared in global scope , it is defined in script scope.
-  // const name = "shivam";  // variables with let & const get declared in script scope.
+  // let name = "shivam_let";    // it doesn't declared in global scope , it is defined in script scope.
+  //const name = "shivam_const";  // variables with let & const get declared in script scope.
    
-    var name = "shivam";     // it is declared in global scope.
-    function regular(){  
-       var name = "singh"  // local execution context or local functional scope.
-       console.log(this.name) // this will refer to the global/window  and output is (shivam)
-       console.log(this)   // this will again refer to the global/window object.
-    
-   }
-   regular();
+  //   var name = "shivam_var";     // it is declared in global scope.
+  //   function regular(){  
+  //      var name = "singh"  // local execution context or local functional scope.
+  //      console.log(name) // this will refer to the global/window  and output is (shivam)
+  //      console.log(this.name)   // this will again refer to the global/window object.
+  //      console.log(this)
+  //  }
+  //  regular();
    
 
    //-----------------this with arrow function---------------------//
@@ -54,45 +54,47 @@
      let arrow = ()=>{
          var school = "st.paul's";     // this behaves same as  regular function;
          console.log(this.school)      //  this is referring to the global object // masai
+         console.log(this)
+         console.log(school) 
      }
      arrow();     
 
   // ---------------------this inside a method------------------------------------------//
 
-  let data = {
-      name : "katy",
-      school : "oxford",
-      getDetails: function(){
-          console.log(this)  // this will refer to the owner object/parent object.
-          console.log(this.name,this.school)
-          // name and school is already defined in global scope, still it will refer to the
-          // parent object only.  (katy oxford)
-      },
-     arrowDetails : ()=>{
-          console.log(this)  // this will refer to the window object
-          console.log(this.name,this.school)
-        }     
-  }
-   data.getDetails();
-   data.arrowDetails();
+  // let data = {
+  //     name : "katy",
+  //     school : "oxford",
+  //     getDetails: function(){
+  //         console.log(this)  // this will refer to the owner object/parent object.
+  //         console.log(this.name,this.school)
+  //         // name and school is already defined in global scope, still it will refer to the
+  //         // parent object only.  (katy oxford)
+  //     },
+  //    arrowDetails : ()=>{
+  //         console.log(this)  // this will refer to the window object
+  //         console.log(this.name,this.school)
+  //       }     
+  // }
+  //  data.getDetails();
+  //  data.arrowDetails();
 
  //----------------this inside  Constructor function -------------------------------//
   
- function Teachers (name, sub){
-    //  let obj = {};
-    //  obj.name = name;
-    //  obj.subject = sub;
-    //  return obj;
+//  function Teachers (name, sub){
+//     //  let obj = {};
+//     //  obj.name = name;
+//     //  obj.subject = sub;
+//     //  return obj;
 
-     this.name = name;    // new word will creat an empty object and returned with some value.
-     this.subject = sub; // inside constructor function this refers to the owner object.
+//      this.name = name;    // new word will creat an empty object and returned with some value.
+//      this.subject = sub; // inside constructor function this refers to the owner object.
    
 
- }
- let T1 = new Teachers("Nrupul","JS");
- console.log(T1);
- let T2 = new Teachers("Aman", "DSA");
- console.log(T2);
+//  }
+//  let T1 = new Teachers("Nrupul","JS");
+//  console.log(T1);
+//  let T2 = new Teachers("Aman", "DSA");
+//  console.log(T2);
 
    
  </script>
