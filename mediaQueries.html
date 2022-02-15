@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            background-color: black;
+        }    
+        
+
+        .container {
+            display: grid;
+            grid-template-areas: "a a a a"
+                                 "b c d e";                         
+            
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 100px 200px;
+            background-color: antiquewhite;
+            width: 85%;
+            border: 1px solid red;
+            margin: auto;
+            justify-content: center;
+
+        }
+
+        .container>div {           
+            border: 1px solid yellow;
+            margin: 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            padding: 10px;
+
+        }
+
+        .nav {
+            grid-area: a;          
+            background: #f7fa00;
+        }
+
+        #box1 {
+            grid-area: b;
+            background-color: #ff0100;
+        }
+
+        #box2 {
+            grid-area: c;
+            background-color: #00fb2a;
+        }
+
+        #box3 {
+            grid-area: d;
+            background-color: #5763ee;
+        }
+
+        #box4 {
+            grid-area: e;
+            background-color: #989898;
+        }
+
+       
+
+         @media all and (max-width : 700px) and (min-width:380px) {
+            * {
+            background-color: rgb(128, 115, 0);
+           }
+           .container{    
+               display: grid;     
+               grid-template-columns: repeat(2,1fr);  
+               grid-template-rows: 80px repeat(2,120px);          
+               width: 85%;             
+               
+           }
+           .nav { 
+            grid-area: 1/1/2/3;          
+            background: #252509;
+        }
+        #box1 {
+            grid-area: 2/1/3/2;
+            background-color: #ff0100;
+        }
+
+        #box2 {
+            grid-area: 2/2/3/3;
+            background-color: #00fb2a;
+        }
+
+        #box3 {
+            grid-area: 3/1/4/2;
+            background-color: #5763ee;
+        }
+
+        #box4 {
+            grid-area: 3/2/4/3;
+            background-color: #989898;
+        }
+            
+         }
+
+         @media all and (max-width : 380px) {
+            * {
+            background-color: teal;
+           }
+           .container{    
+               grid-template-areas: "a"
+                                    "b"
+                                    "e"
+                                     "c"
+                                     "d";         
+               grid-template-columns: repeat(1,1fr);  
+               grid-template-rows: 80px repeat(4,120px);          
+               width: 65%;             
+               
+           }
+           .nav { 
+            grid-area: 1/1/2/2;          
+            background: #252509;
+        }
+            
+         }
+         
+    </style>
+</head>
+
+<body>
+    <h2>Learning Media Queries</h2>
+
+    <div class="container">
+        <div class="nav">Navigation</div>
+        <div id="box1">Box-1</div>
+        <div id="box2">Box-2</div>
+        <div id="box3">Box-3</div>
+        <div id="box4">Box-4</div>
+
+    </div>
+
+
+</body>
+
+</html>
